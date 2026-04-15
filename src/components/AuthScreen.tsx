@@ -16,7 +16,7 @@ export function AuthScreen({
     <div className="min-h-screen bg-surface text-on-surface flex flex-col">
       <div className="px-6 md:px-12 py-6">
         <Link to="/" className="inline-block" aria-label="AVL Copilot home">
-          <img src="/logo-icon.png" alt="AVL Copilot" className="h-9 w-auto" />
+          <img src={`${import.meta.env.BASE_URL}logo-icon.png`} alt="AVL Copilot" className="h-9 w-auto" />
         </Link>
       </div>
 

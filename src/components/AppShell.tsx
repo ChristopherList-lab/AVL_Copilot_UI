@@ -43,7 +43,7 @@ export function SidebarLogoHeader({ onNewThread }: { onNewThread: () => void }) 
   return (
     <div className="px-5 py-5 border-b border-white/5">
       <Link to="/" className="block mb-5" aria-label="AVL Copilot home">
-        <img src="/logo-icon.png" alt="AVL Copilot" className="h-7 w-auto" />
+        <img src={`${import.meta.env.BASE_URL}logo-icon.png`} alt="AVL Copilot" className="h-7 w-auto" />
       </Link>
       <button
         onClick={onNewThread}

@@ -26,7 +26,7 @@ export function Settings() {
     <div className="min-h-screen bg-surface text-on-surface flex flex-col">
       <div className="px-6 md:px-12 py-6 flex items-center justify-between border-b border-white/5">
         <Link to="/" className="inline-block" aria-label="AVL Copilot home">
-          <img src="/logo-icon.png" alt="AVL Copilot" className="h-8 w-auto" />
+          <img src={`${import.meta.env.BASE_URL}logo-icon.png`} alt="AVL Copilot" className="h-8 w-auto" />
         </Link>
         <Link
           to="/"
