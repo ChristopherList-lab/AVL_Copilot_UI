@@ -5,7 +5,7 @@ import type { ChatMessage } from '../lib/types';
 export function UserBubble({ message }: { message: ChatMessage }) {
   return (
     <div className="flex justify-end">
-      <div className="max-w-[85%] bg-surface-container-high border border-white/10 px-4 py-3 text-sm text-on-surface leading-relaxed">
+      <div className="max-w-[88%] md:max-w-[85%] bg-surface-container-high border border-white/10 px-3.5 md:px-4 py-2.5 md:py-3 text-[15px] md:text-sm text-on-surface leading-relaxed">
         {message.imageUrl && (
           <img
             src={message.imageUrl}
@@ -22,7 +22,7 @@ export function UserBubble({ message }: { message: ChatMessage }) {
 export function AssistantBubble({ message }: { message: ChatMessage }) {
   return (
     <div className="flex justify-start">
-      <div className="max-w-[85%] bg-primary/10 border border-primary/30 px-4 py-3 text-sm text-on-surface leading-relaxed">
+      <div className="max-w-[88%] md:max-w-[85%] bg-primary/10 border border-primary/30 px-3.5 md:px-4 py-2.5 md:py-3 text-[15px] md:text-sm text-on-surface leading-relaxed">
         {message.content && <p className={message.steps?.length ? 'mb-3' : ''}>{message.content}</p>}
         {message.steps && message.steps.length > 0 && (
           <ol className="space-y-2 pl-4 list-decimal text-on-surface-variant marker:text-primary">
@@ -79,7 +79,7 @@ export function ChatInput({ onSend, disabled, placeholder = 'Describe your issue
 
   return (
     <form
-      className="border-t border-white/5 bg-surface-container-high"
+      className="border-t border-white/5 bg-surface-container-high pb-[env(safe-area-inset-bottom)]"
       onSubmit={handleSubmit}
     >
       {attachedUrl && (
@@ -103,13 +103,13 @@ export function ChatInput({ onSend, disabled, placeholder = 'Describe your issue
           </div>
         </div>
       )}
-      <div className="px-4 py-3 flex items-center gap-3">
+      <div className="px-3 md:px-4 py-3 flex items-center gap-2 md:gap-3">
         <button
           type="button"
           aria-label="Attach image"
           title="Attach image"
           onClick={() => fileRef.current?.click()}
-          className="w-9 h-9 flex items-center justify-center rounded-full text-on-surface-variant hover:text-primary hover:bg-white/5 transition-colors"
+          className="w-10 h-10 md:w-9 md:h-9 flex items-center justify-center rounded-full text-on-surface-variant hover:text-primary hover:bg-white/5 active:bg-white/10 transition-colors flex-shrink-0"
         >
           <span className="material-symbols-outlined text-lg">attach_file</span>
         </button>
@@ -133,13 +133,13 @@ export function ChatInput({ onSend, disabled, placeholder = 'Describe your issue
           aria-label="Describe your issue"
           disabled={disabled}
           autoComplete="off"
-          className="flex-1 bg-transparent text-sm text-on-surface placeholder:text-on-surface-variant/60 font-mono focus:outline-none disabled:opacity-50"
+          className="flex-1 min-w-0 bg-transparent text-base md:text-sm text-on-surface placeholder:text-on-surface-variant/60 font-mono focus:outline-none disabled:opacity-50"
         />
         <button
           type="submit"
           aria-label="Send message"
           disabled={disabled}
-          className="w-9 h-9 bg-primary flex items-center justify-center text-black hover:bg-white transition-all rounded-full disabled:opacity-50"
+          className="w-10 h-10 md:w-9 md:h-9 bg-primary flex items-center justify-center text-black hover:bg-white active:bg-white transition-all rounded-full disabled:opacity-50 flex-shrink-0"
         >
           <span className="material-symbols-outlined text-lg">arrow_upward</span>
         </button>

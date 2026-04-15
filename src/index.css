@@ -12,6 +12,30 @@
     @apply bg-surface text-on-surface;
     font-family: 'Inter', sans-serif;
     min-height: 100vh;
+    min-height: 100dvh;
+  }
+
+  html {
+    /* Use dvh everywhere for mobile browser chrome correctness */
+    height: 100%;
+    /* Prevent pull-to-refresh / overscroll from exposing white background */
+    overscroll-behavior-y: none;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    -webkit-tap-highlight-color: transparent;
+    overscroll-behavior-y: none;
+  }
+
+  /* Ensure form inputs never trigger iOS zoom on focus (16px minimum).
+     Uses !important because Tailwind utility text-sm would otherwise win. */
+  @media (max-width: 767px) {
+    input:not([type="checkbox"]):not([type="radio"]):not([type="file"]),
+    textarea,
+    select {
+      font-size: 16px !important;
+    }
   }
 
   ::selection {

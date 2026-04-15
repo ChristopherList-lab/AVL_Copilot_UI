@@ -47,7 +47,7 @@ export function ThreadList({ threads, activeId, onSelect, onDelete }: ThreadList
               }}
               aria-label="Delete thread"
               title="Delete thread"
-              className="absolute right-2 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 focus:opacity-100 transition-opacity w-8 h-8 flex items-center justify-center rounded-full text-on-surface-variant hover:text-red-400 hover:bg-red-500/10"
+              className="absolute right-2 top-1/2 -translate-y-1/2 opacity-60 md:opacity-0 md:group-hover:opacity-100 focus:opacity-100 transition-opacity w-9 h-9 flex items-center justify-center rounded-full text-on-surface-variant hover:text-red-400 hover:bg-red-500/10"
             >
               <span className="material-symbols-outlined text-base">delete</span>
             </button>

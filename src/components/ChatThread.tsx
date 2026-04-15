@@ -16,7 +16,7 @@ export function ChatThread({ messages, isTyping }: ChatThreadProps) {
 
   return (
     <div
-      className="flex-1 overflow-y-auto scroll-thin px-6 py-6 space-y-5"
+      className="flex-1 overflow-y-auto scroll-thin px-4 py-5 md:px-6 md:py-6 space-y-4 md:space-y-5"
       role="log"
       aria-live="polite"
       aria-atomic="false"
