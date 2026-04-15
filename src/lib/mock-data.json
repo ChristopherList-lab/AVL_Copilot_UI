@@ -1,0 +1,107 @@
+{
+  "_comment": "Use these as fixtures for the chat UI before wiring up a real backend. Names/specs reflect realistic AVL technician conversations.",
+
+  "user": {
+    "id": "u_001",
+    "name": "Chris L.",
+    "email": "chris@example.com",
+    "role": "Audio Engineer",
+    "plan": "trial"
+  },
+
+  "threads": [
+    {
+      "id": "t_001",
+      "title": "Wireless mic dropout — Sunday service",
+      "createdAt": "2026-04-13T09:42:00Z",
+      "lastMessageAt": "2026-04-13T09:48:00Z",
+      "messages": [
+        {
+          "id": "m_001",
+          "role": "user",
+          "content": "My wireless mic keeps cutting out during the service.",
+          "timestamp": "2026-04-13T09:42:00Z"
+        },
+        {
+          "id": "m_002",
+          "role": "assistant",
+          "content": "Let me help diagnose that:",
+          "steps": [
+            "What frequency band is the mic on?",
+            "How many wireless channels are running at once?",
+            "Any LED lighting fixtures near the antennas?"
+          ],
+          "timestamp": "2026-04-13T09:42:04Z"
+        },
+        {
+          "id": "m_003",
+          "role": "user",
+          "content": "It's a Shure ULXD on 470-534 MHz. We have 8 channels active and there are LED panels about 6 feet from the antennas.",
+          "timestamp": "2026-04-13T09:45:00Z"
+        },
+        {
+          "id": "m_004",
+          "role": "assistant",
+          "content": "LED panels at that distance are a likely culprit. Two things to try first:",
+          "steps": [
+            "Move the antennas to at least 10 feet from any LED panel and re-run a frequency scan in Wireless Workbench.",
+            "Check that the LED drivers are PWM-shielded; some cheap fixtures emit broadband RF noise that overlaps the 470-534 band."
+          ],
+          "timestamp": "2026-04-13T09:48:00Z"
+        }
+      ]
+    },
+    {
+      "id": "t_002",
+      "title": "DMX flicker on rear truss",
+      "createdAt": "2026-04-12T19:10:00Z",
+      "lastMessageAt": "2026-04-12T19:14:00Z",
+      "messages": [
+        {
+          "id": "m_010",
+          "role": "user",
+          "content": "Half the rear truss fixtures are flickering and the other half are fine.",
+          "timestamp": "2026-04-12T19:10:00Z"
+        },
+        {
+          "id": "m_011",
+          "role": "assistant",
+          "content": "Sounds like a DMX signal integrity issue on the back half of the chain. Quick checks:",
+          "steps": [
+            "Is there a 120-ohm terminator at the last fixture in the chain?",
+            "What's the total cable run from the console to the last fixture?"
+          ],
+          "timestamp": "2026-04-12T19:11:00Z"
+        }
+      ]
+    },
+    {
+      "id": "t_003",
+      "title": "Projector lamp warning — NEC PA653U",
+      "createdAt": "2026-04-10T14:00:00Z",
+      "lastMessageAt": "2026-04-10T14:05:00Z",
+      "messages": [
+        {
+          "id": "m_020",
+          "role": "user",
+          "content": "Lamp warning light just came on. Can I keep using it for tonight's event?",
+          "timestamp": "2026-04-10T14:00:00Z"
+        },
+        {
+          "id": "m_021",
+          "role": "assistant",
+          "content": "Per NEC's manual, the warning indicates the lamp is past 80% of rated life. Safe to run for tonight, but plan to swap before the next event. The PA653U uses lamp PN: NP41LP. Order one and have it on hand within the week.",
+          "timestamp": "2026-04-10T14:05:00Z"
+        }
+      ]
+    }
+  ],
+
+  "starter_prompts": [
+    "My wireless mic keeps cutting out",
+    "How do I terminate a DMX line?",
+    "Projector showing 'No Signal' from the switcher",
+    "Buzz on the audio bus only when LEDs are active",
+    "Best gain structure for a small chapel system"
+  ]
+}
